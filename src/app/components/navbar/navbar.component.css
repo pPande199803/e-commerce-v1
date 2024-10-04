@@ -32,5 +32,6 @@
     width: 40px;
 }
 .dropdown-menu li{
-    width: 40px;
+    width: 120px;
+    text-align: center;
 }
