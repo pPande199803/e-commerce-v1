@@ -1,186 +1,42 @@
 <div class="container-fluid">
     <div class="main">
         <div class="products">
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
+            @for (item of products; track $index) {
+
+                <div class="card" style="width: 18rem;">
+                    <div class="wishlist">
+                        <span><i class="fa fa-heart"></i></span>
                     </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
+                    <img src="{{item.thumbnail}}" class="card-img-top" alt="product-image">
+                    <div class="quantity">
+                        <span><i class="fa fa-minus" (click)="decreaseQuantity(item.id, $index)"></i></span>
+                        <span class="p-quantity">{{item.quantity}}</span>
+                        <span><i class="fa fa-plus" (click)="increaseQuantity(item.id, $index)"></i></span>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <p class="price">{{item.price | currency:'INR'}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="rating"><span><i class="fa fa-star"></i></span>{{item.rating}}</p>
+                        </div>
                       </div>
-                  </div>
-                </div>
-              </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
+                      <div class="row">
+                        <div class="col-12">
+                            <p class="status text-success">In Stock</p>
+                        </div>
                       </div>
-                  </div>
-                </div>
-              </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
+                      <div class="row">
+                          <div class="d-grid col-12 mx-auto">
+                              <a href="#" class="btn btn-warning">Add To Cart</a>
+                              <a href="#" class="btn btn-primary mt-2">Buy Now</a>
+                          </div>
                       </div>
-                  </div>
-                </div>
-              </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./product-image.png" class="card-img-top" alt="product-image">
-                <div class="quantity">
-                    <span><i class="fa fa-minus"></i></span>
-                    <span class="p-quantity">{{quantity}}</span>
-                    <span><i class="fa fa-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <p class="price">price</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="rating">rating</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <p class="status text-success">In Stock</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="d-grid col-12 mx-auto">
-                          <a href="#" class="btn btn-warning">Add To Cart</a>
-                          <a href="#" class="btn btn-primary mt-2">Buy Now</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
+            }
         </div>
     </div>
 </div>
